@@ -1,0 +1,9 @@
+
+cd ~/.vim/bundle/Nerdtree
+git pull origin master
+
+
+Upgrading all bundled plugins
+git submodule foreach git pull origin master
+
+Linux, what a sugary sweet software. 

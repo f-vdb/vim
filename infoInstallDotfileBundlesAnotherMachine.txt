@@ -1,0 +1,12 @@
+
+
+cd ~
+git clone https://github.com/f-vdb/vim.git ~/.vim
+ln -s .vim/vimrc .
+ln -s .vim/gvimrc .
+cd ~/.vim
+git submodule init
+git submodule update
+
+
+

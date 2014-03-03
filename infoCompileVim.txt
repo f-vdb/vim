@@ -16,6 +16,7 @@ cd vim/src
 make distclean
 make config
 make 
+make install
 
 
 things i need:
@@ -23,3 +24,8 @@ pythoninterp
 rubyinterp
 huge
 cscope
+
+
+Start vim and have a great effectiveness.
+
+To see what you have press u can type :version in vim.
