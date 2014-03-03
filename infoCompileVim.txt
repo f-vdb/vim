@@ -1,0 +1,25 @@
+cd /opt
+mkdir myvim
+cd myvim
+hg clone https://vim.googlecode.com/hg/ vim
+
+apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
+                libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
+                libcairo2-dev libx11-dev libxpm-dev libxt-dev
+
+apt-get install python-dev
+this is for the pyhtoninterp
+
+
+edit Makefile in vim/src or copy Makefile.my in the directory
+cd vim/src
+make distclean
+make config
+make 
+
+
+things i need:
+pythoninterp
+rubyinterp
+huge
+cscope
