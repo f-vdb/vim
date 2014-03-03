@@ -3,7 +3,15 @@
 "
 "
 "
-" add vim addons
+" pathogen vim script/addon
+" https://github.com/tpope/vim-pathogen
+" Manage your 'runtimepath' with ease. In practical terms,
+" pathogen.vim makes it super easy to install plugins and runtime files 
+" in their own private directories.
+"call pathogen#infect('C:\Users\yoicks\vimfiles\bundle')
+call pathogen#infect()
+
+
 set nocompatible
 " security
 set nomodeline
@@ -18,13 +26,6 @@ autocmd GUIEnter * set visualbell t_vb=
 
 set guifont=DejaVu\ Sans\ Mono\ 14
 
-" pathogen vim script/addon
-" https://github.com/tpope/vim-pathogen
-" Manage your 'runtimepath' with ease. In practical terms,
-" pathogen.vim makes it super easy to install plugins and runtime files 
-" in their own private directories.
-"call pathogen#infect('C:\Users\yoicks\vimfiles\bundle')
-call pathogen#infect()
 
 
 " plugin: supertab
