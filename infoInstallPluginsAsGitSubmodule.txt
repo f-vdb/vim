@@ -1,0 +1,8 @@
+
+cd ~/.vim/bundle
+git submodule add https://.....git...repo ./nameOfThePlugin
+git add .
+git commit -m 'Install bla foobar as git submodule.'
+cd ..
+git push origin master
+
