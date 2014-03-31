@@ -1,5 +1,6 @@
 cd ~
-git clone https://github.com/f-vdb/vim.git ~/.vim
+//git clone https://github.com/f-vdb/vim.git ~/.vim
+git@github.com:f-vdb/vim.git
 ln -s .vim/vimrc ~/.vimrc
 ln -s .vim/gvimrc ~/.gvimrc
 cd ~/.vim
