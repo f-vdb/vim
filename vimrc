@@ -149,13 +149,25 @@ autocmd filetype c imap <F8> <Esc>:w<Return><Esc>:!clear && gcc %  -Wextra -peda
 
 " this seems to work
 " the program is compiled to *.out 
-autocmd filetype cpp map <F8> :w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++0x -o %:r.out && ./%:r.out <Return>
-autocmd filetype cpp imap <F8> <Esc>:w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++0x -o .%:r.out && ./%:r.out <Return>
+autocmd filetype cpp map <F8> :w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r.out && ./%:r.out <Return>
+autocmd filetype cpp imap <F8> <Esc>:w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++11 -o .%:r.out && ./%:r.out <Return>
 
 
-autocmd filetype cpp map <F9> :w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++0x -o %:r && ./%:r >> %<Return> :e <Return>
-autocmd filetype cpp imap <F9> <Esc>:w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++0x -o %:r && ./%:r >> %<Return> :e <Return>
+autocmd filetype cpp map <F9> :w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r && ./%:r >> %<Return> :e <Return>
+autocmd filetype cpp imap <F9> <Esc>:w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r && ./%:r >> %<Return> :e <Return>
 
+
+" map the F9 key to run make
+:map <F12> :make
+"set makeprg to change what :make does
+"
+":copen open a mini-window with the list of errors
+"       hit enter on an error to jump to line
+"
+":cclose close the mini-window
+":cw or strg+w arrow down    toggles the mini-window (if errors exist)
+
+" 
 " python 3
 "autocmd filetype python map <F8> :w<Return><Esc>:!clear && python3 % <CR>  
 "autocmd filetype python imap <F8> <Esc>:w<Return><Esc>:!clear &&  python3 %<CR>
