@@ -10,17 +10,26 @@
 " in their own private directories.
 "call pathogen#infect('C:\Users\yoicks\vimfiles\bundle')
 call pathogen#infect()
-
+call pathogen#helptags()
 "########################################################################################
 " Restore cursor to file position in previous editing session
 "########################################################################################
 " Tell vim to remember certain things when we exit
-" '10  :  marks will be remembered for up to 10 previously edited files
+" '128  :  marks will be remembered for up to 10 previously edited files
 " "100 :  will save up to 100 lines for each register
-" :20  :  up to 20 lines of command-line history will be remembered
+" :80  :  up to 80 lines of command-line history will be remembered
 " %    :  saves and restores the buffer list
 " n... :  where to save the viminfo files
-set viminfo='10,\"100,:20,%,n~/.viminfo
+set viminfo='128,\"100,:80,%,n~/.viminfo
+
+
+set undodir=~/.vim/undo
+set undofile
+set undolevels=1000
+set undoreload=1000
+
+" Unterstützung für 256 Farben auf dem Terminal.
+set t_Co=256
 
 
 function! ResCur()
@@ -59,6 +68,12 @@ set guifont=DejaVu\ Sans\ Mono\ 14
 let g:SuperTabLongestHighlight = 1                         
 let g:SuperTabDefaultCompletionType = "context"
 
+" Stichwort-Ergänzung als Standard
+let g:SuperTabContextDefaultCompletionType='<c-N><c-P>'
+let g:SuperTabRetainCompletionDuration ='completion'
+
+
+
 " plugin: clang_complete
 " https://github.com/Rip-Rip/clang-complete
 "
@@ -72,6 +87,28 @@ let g:clang_complete_copen = 1
 let g:clang_debug = 0
 " path to libclang.so
 let g:clang_library_path = "/usr/lib/llvm-3.4/lib/"
+
+" Das Fenster mit den Fehlern automatisch aktualisieren.
+let g:clang_periodic_quickfix=1
+
+" Das Fehlerfenster aktualisieren wenn der Insert-Mode
+" verlassen wird oder für einige Zeit nichts eingegeben wird.
+autocmd InsertLeave *.c,*.cpp,*.cxx,*.cc call g:ClangUpdateQuickFix()
+autocmd CursorHoldI *.c,*.cpp,*.cxx,*.cc call g:ClangUpdateQuickFix()
+
+" Preview-Fenster automatisch
+" schließen.
+let g:clang_close_preview=1
+
+" Auch Präprozessor-Kram soll
+" vervollständigt werden.
+let g:clang_complete_macros=1
+
+" Auch Pattern (wie z.B. Schleifen)
+" sollen vervollständigt werden.
+let g:clang_complete_patterns=1
+
+
 
 " sonst Verhalten wie vi
 set nocompatible			
@@ -158,7 +195,11 @@ autocmd filetype cpp imap <F9> <Esc>:w<Return><Esc>:!clear && clang++ % -Wextra 
 
 
 " map the F9 key to run make
-:map <F12> :make
+map <F11> :make
+
+" Ein- und ausschalten auf F12
+map <F12> :NERDTreeToggle<cr>
+
 "set makeprg to change what :make does
 "
 ":copen open a mini-window with the list of errors
@@ -270,10 +311,32 @@ set ignorecase
 
 " wenn bei der Suche Grossbuchstaben angegeben werden, dann wird ignorecase ausgeschaltet
 set smartcase
+
+" Schon suchen, während wir noch tippen.
 set incsearch
 
 " gefundene Suchbegriffe werden markiert
 set hlsearch 
+
+
+" Virtuelles editieren bedeutet, dass wir den Cursor
+" an stellen positioniern können, wo sich noch kein
+" Zeichen befindet. Wir wollen dies in allen Modi.
+set virtualedit=all
+
+" Zeilen automatisch zur Darstellung umbrechen.
+set wrap
+
+" Marker für umgebrochene Zeile
+set showbreak=->\ \ \
+
+" Breche immer am vollen Wort oder anderem Trennzeichen um.
+set linebreak
+
+" Länge einer Zeile, automatisch harter Umbruch, wenn dies
+" überschritten wird.
+set textwidth=72
+
 
 " Tabstop entspricht 4 Leerzeichen
 set tabstop=4			
@@ -287,6 +350,17 @@ set shiftround
 
 " beim Tippen schliessender Klammer springt der Cursor zur oeffnenden Klammer
 set showmatch
+
+" Zeigt in der Kommandozeile an, in welchem Mode wir uns
+" aktuell befinden. Recht praktisch um den Überblick zu behalten.
+set showmode
+
+" Zeigt die Statuszeile unten immer an.
+set ls=2
+
+" Setzt nach Bewegungskommandos den Cursor auf das erste Zeichen
+" der Zeile und NICHT an deren Beginn.
+set nostartofline
 
 " einruecken fuer C-Syntax
 set cindent 
