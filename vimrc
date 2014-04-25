@@ -90,7 +90,7 @@ let g:clang_library_path = "/usr/lib/llvm-3.4/lib/"
 
 " Das Fenster mit den Fehlern automatisch aktualisieren.
 let g:clang_periodic_quickfix=1
-
+let g:clang_user_options = 'std=c++11'
 " Das Fehlerfenster aktualisieren wenn der Insert-Mode
 " verlassen wird oder für einige Zeit nichts eingegeben wird.
 autocmd InsertLeave *.c,*.cpp,*.cxx,*.cc call g:ClangUpdateQuickFix()
@@ -108,7 +108,11 @@ let g:clang_complete_macros=1
 " sollen vervollständigt werden.
 let g:clang_complete_patterns=1
 
-
+" clang_complete kollidiert mit ctag und
+" Keybinding <c-]> darum habe ich clang_complete
+" ein anderes Keybinding zugelegt
+" let g:clang_jumpto_declaration_key="<c-e>"
+" ABER ich ersetze ctag jetzt auch durch clang_complete
 
 " sonst Verhalten wie vi
 set nocompatible			
@@ -168,6 +172,8 @@ imap jj <Esc>
 
 map <F2> :w<Return><Esc>:!clear && make <Return>
 imap <F2> <Esc>:w<Return><Esc>:!clear && make <Return>
+
+nmap <F6> :!/usr/bin/ctags-exuberant -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "map <F3> :w<Return><Esc>:! python3 % >> %<Return>:! echo ''' >> % <Return> :e<Return>
 "imap <F3> <Esc>:w<Return><Esc>:! python3 % >> %<Return>:! echo ''' >> % <Return> :e<Return>
