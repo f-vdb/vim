@@ -61,7 +61,6 @@ autocmd GUIEnter * set visualbell t_vb=
 set guifont=DejaVu\ Sans\ Mono\ 14
 
 
-
 " plugin: supertab
 "
 "the best hit is selected so just press enter 
