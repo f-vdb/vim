@@ -88,12 +88,12 @@ let g:clang_debug = 0
 let g:clang_library_path = "/usr/lib/llvm-3.4/lib/"
 
 " Das Fenster mit den Fehlern automatisch aktualisieren.
-let g:clang_periodic_quickfix=1
-let g:clang_user_options = 'std=c++11'
+"let g:clang_periodic_quickfix=1
+"let g:clang_user_options = 'std=c++11'
 " Das Fehlerfenster aktualisieren wenn der Insert-Mode
 " verlassen wird oder für einige Zeit nichts eingegeben wird.
-autocmd InsertLeave *.c,*.cpp,*.cxx,*.cc call g:ClangUpdateQuickFix()
-autocmd CursorHoldI *.c,*.cpp,*.cxx,*.cc call g:ClangUpdateQuickFix()
+"autocmd InsertLeave *.c,*.cpp,*.cxx,*.cc call g:ClangUpdateQuickFix()
+"autocmd CursorHoldI *.c,*.cpp,*.cxx,*.cc call g:ClangUpdateQuickFix()
 
 " Preview-Fenster automatisch
 " schließen.
@@ -192,7 +192,7 @@ autocmd filetype c imap <F8> <Esc>:w<Return><Esc>:!clear && gcc %  -Wextra -peda
 " this seems to work
 " the program is compiled to *.out 
 autocmd filetype cpp map <F8> :w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r.out && ./%:r.out <Return>
-autocmd filetype cpp imap <F8> <Esc>:w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++11 -o .%:r.out && ./%:r.out <Return>
+autocmd filetype cpp imap <F8> <Esc>:w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r.out && ./%:r.out <Return>
 
 
 autocmd filetype cpp map <F9> :w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r && ./%:r >> %<Return> :e <Return>
