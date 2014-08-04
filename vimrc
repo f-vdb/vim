@@ -216,11 +216,11 @@ map <F12> :NERDTreeToggle<cr>
 
 " 
 " python 3
-"autocmd filetype python map <F8> :w<Return><Esc>:!clear && python3 % <CR>  
-"autocmd filetype python imap <F8> <Esc>:w<Return><Esc>:!clear &&  python3 %<CR>
+autocmd filetype python map <F8> :w<Return><Esc>:!clear && python3 % <CR>  
+autocmd filetype python imap <F8> <Esc>:w<Return><Esc>:!clear &&  python3 %<CR>
 " python2
-autocmd filetype python map <F8> <Esc>:w<Return><Esc>:!clear && python % <CR>
-autocmd filetype python imap <F8> <Esc>:w<Return><Esc>:!clear &&  python %<CR>
+"autocmd filetype python map <F8> <Esc>:w<Return><Esc>:!clear && python % <CR>
+"autocmd filetype python imap <F8> <Esc>:w<Return><Esc>:!clear &&  python %<CR>
 " F11 fullscreen in gnome3
 
 "map <F12> :w<Return><Esc>:!g++ % -Wall -O -pedantic -std=c++0x -o %:r.exe && %:r.exe >> % <Return>
