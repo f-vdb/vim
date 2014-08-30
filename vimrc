@@ -73,6 +73,9 @@ let g:SuperTabRetainCompletionDuration ='completion'
 
 
 
+let g:go_fmt_autosave = 0
+
+
 " plugin: clang_complete
 " https://github.com/Rip-Rip/clang-complete
 "
