@@ -73,7 +73,10 @@ let g:SuperTabRetainCompletionDuration ='completion'
 
 
 
-let g:go_fmt_autosave = 0
+" vim-go importiert automatisch die benutzen packages....
+" cool...aber da ich viel von github und bitbucket nutze
+" schalte ich es erstmal aus
+let g:go_fmt_command = "gofmt"
 
 
 " plugin: clang_complete
