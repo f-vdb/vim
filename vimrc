@@ -197,7 +197,7 @@ autocmd filetype c imap <F8> <Esc>:w<Return><Esc>:!clear && gcc %  -Wextra -peda
 
 " this seems to work
 " the program is compiled to *.out 
-autocmd filetype cpp map <F8> :w<Return><Esc>:!clear && clang++-4.3 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r.out && ./%:r.out <Return>
+autocmd filetype cpp map <F8> :w<Return><Esc>:!clear && clang++-3.4 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r.out && ./%:r.out <Return>
 autocmd filetype cpp imap <F8> <Esc>:w<Return><Esc>:!clear && clang++-3.4 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r.out && ./%:r.out <Return>
 
 
