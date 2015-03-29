@@ -197,14 +197,15 @@ autocmd filetype c imap <F8> <Esc>:w<Return><Esc>:!clear && gcc %  -Wextra -peda
 
 " this seems to work
 " the program is compiled to *.out 
-autocmd filetype cpp map <F8> :w<Return><Esc>:!clear && clang++-3.4 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r.out && ./%:r.out <Return>
-autocmd filetype cpp imap <F8> <Esc>:w<Return><Esc>:!clear && clang++-3.4 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r.out && ./%:r.out <Return>
+autocmd filetype cpp map <F8> :w<Return><Esc>:!clear && clang++-3.4 % -Wextra -Weffc++ -pedantic -O -std=c++1y -o %:r.out && ./%:r.out <Return>
+autocmd filetype cpp imap <F8> <Esc>:w<Return><Esc>:!clear && clang++-3.4 % -Wextra -Weffc++ -pedantic -O -std=c++1y -o %:r.out && ./%:r.out <Return>
 
 autocmd filetype go map <F8> :w<Return><Esc>:!clear && go run  % <Return>
 autocmd filetype go imap <F8> <Esc>:w<Return><Esc>:!clear && go run % <Return>
 
-autocmd filetype cpp map <F9> :w<Return><Esc>:!clear && clang++-3.4 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r && ./%:r >> %<Return> :e <Return>
-autocmd filetype cpp imap <F9> <Esc>:w<Return><Esc>:!clear && clang++-3.4 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r && ./%:r >> %<Return> :e <Return>
+
+autocmd filetype cpp map <F9> :w<Return><Esc>:!clear && clang++-3.4 % -Wextra -Weffc++ -pedantic -O -std=c++1y -o %:r && ./%:r >> %<Return> :e <Return>
+autocmd filetype cpp imap <F9> <Esc>:w<Return><Esc>:!clear && clang++-3.4 % -Wextra -Weffc++ -pedantic -O -std=c++1y -o %:r && ./%:r >> %<Return> :e <Return>
 
 
 " map the F9 key to run make
