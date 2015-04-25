@@ -76,7 +76,7 @@ let g:SuperTabRetainCompletionDuration ='completion'
 " vim-go importiert automatisch die benutzen packages....
 " cool...aber da ich viel von github und bitbucket nutze
 " schalte ich es erstmal aus
-let g:go_fmt_command = "gofmt"
+" let g:go_fmt_command = "gofmt"
 
 
 " plugin: clang_complete
@@ -197,12 +197,12 @@ autocmd filetype c imap <F8> <Esc>:w<Return><Esc>:!clear && gcc %  -Wextra -peda
 
 " this seems to work
 " the program is compiled to *.out 
-autocmd filetype cpp map <F8> :w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r.out && ./%:r.out <Return>
-autocmd filetype cpp imap <F8> <Esc>:w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r.out && ./%:r.out <Return>
+autocmd filetype cpp map <F8> :w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r.out && ./%:r.out <Return>
+autocmd filetype cpp imap <F8> <Esc>:w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r.out && ./%:r.out <Return>
 
 
-autocmd filetype cpp map <F9> :w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r && ./%:r >> %<Return> :e <Return>
-autocmd filetype cpp imap <F9> <Esc>:w<Return><Esc>:!clear && clang++ % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r && ./%:r >> %<Return> :e <Return>
+autocmd filetype cpp map <F9> :w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r && ./%:r >> %<Return> :e <Return>
+autocmd filetype cpp imap <F9> <Esc>:w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r && ./%:r >> %<Return> :e <Return>
 
 
 " map the F9 key to run make
