@@ -91,7 +91,7 @@ let g:clang_complete_auto = 0
 let g:clang_complete_copen = 1
 let g:clang_debug = 0
 " path to libclang.so
-let g:clang_library_path = "/usr/lib/llvm-3.4/lib/"
+let g:clang_library_path = "/usr/lib/llvm-3.6/lib/"
 
 " Das Fenster mit den Fehlern automatisch aktualisieren.
 "let g:clang_periodic_quickfix=1
