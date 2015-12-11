@@ -200,11 +200,24 @@ autocmd filetype c imap <F8> <Esc>:w<Return><Esc>:!clear && gcc %  -Wextra -peda
 autocmd filetype cpp map <F8> :w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++14 -o %:r.out && ./%:r.out <Return>
 autocmd filetype cpp imap <F8> <Esc>:w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++14 -o %:r.out && ./%:r.out <Return>
 
+autocmd filetype cpp map <F3> :w<Return><Esc>:!clang-format-3.6 -style=llvm -dump-config > .clang-format <Return>
+autocmd filetype cpp imap <F3> <Esc>:w<Return><Esc>:!clang-foramat-3.6 -style=llvm -dumg-config > .clang-formant <Return>
+ 
+autocmd filetype cpp map <F4> :w<Return><Esc>:!clang-format-3.6 -i % <Return>
+autocmd filetype cpp imap <F4> <Esc>:w<Return><Esc>:!clang-foramat-3.6 -i % <Return>
+ 
+
+
+
+
+
+
+
 autocmd filetype go map <F8> :w<Return><Esc>:!clear && go run  % <Return>
 autocmd filetype go imap <F8> <Esc>:w<Return><Esc>:!clear && go run % <Return>
 
-autocmd filetype cpp map <F9> :w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r && ./%:r >> %<Return> :e <Return>
-autocmd filetype cpp imap <F9> <Esc>:w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++11 -o %:r && ./%:r >> %<Return> :e <Return>
+autocmd filetype cpp map <F9> :w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++14 -o %:r && ./%:r >> %<Return> :e <Return>
+autocmd filetype cpp imap <F9> <Esc>:w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++14 -o %:r && ./%:r >> %<Return> :e <Return>
 
 
 
