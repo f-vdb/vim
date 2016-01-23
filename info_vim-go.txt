@@ -15,7 +15,7 @@ gocode, godef, goimports etc)
 
 
 in Vim:
-
+:help vim-go
 :GoFmt
 :GoImports
 
