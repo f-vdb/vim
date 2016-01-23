@@ -1,0 +1,23 @@
+
+Install
+
+Pathogen
+
+git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
+
+
+
+in Vim
+:GoInstallBinaries 
+
+this installs all needed binaries such as
+gocode, godef, goimports etc)
+
+
+in Vim:
+
+:GoFmt
+:GoImports
+
+
+                    
