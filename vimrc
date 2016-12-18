@@ -197,8 +197,8 @@ autocmd filetype c imap <F8> <Esc>:w<Return><Esc>:!clear && gcc %  -Wextra -peda
 
 " this seems to work
 " the program is compiled to *.out 
-autocmd filetype cpp map <F8> :w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++14 -o %:r.out && ./%:r.out <Return>
-autocmd filetype cpp imap <F8> <Esc>:w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++14 -o %:r.out && ./%:r.out <Return>
+autocmd filetype cpp map <F8> :w<Return><Esc>:!clear && clang++-3.6 % -Wextra -Weffc++ -pedantic -O -std=c++14 -lpthread -o %:r.out && ./%:r.out <Return>
+autocmd filetype cpp imap <F8> <Esc>:w<Return><Esc>:!clear && clang++-3.6 %  -Wextra -Weffc++ -pedantic -O -std=c++14 -lpthread -o %:r.out && ./%:r.out <Return>
 
 autocmd filetype cpp map <F3> :w<Return><Esc>:!clang-format-3.6 -style=llvm -dump-config > .clang-format <Return>
 autocmd filetype cpp imap <F3> <Esc>:w<Return><Esc>:!clang-foramat-3.6 -style=llvm -dumg-config > .clang-formant <Return>
@@ -209,7 +209,8 @@ autocmd filetype cpp imap <F4> <Esc>:w<Return><Esc>:!clang-foramat-3.6 -i % <Ret
 
 
 
-
+" format with goimports instead of gofmt
+let g:go_fmt_command = "goimports"
 
 
 
