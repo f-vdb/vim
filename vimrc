@@ -279,6 +279,7 @@ au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 " set guifont=Lucida_Sans_Unicode_Standard:h18
 " set guifont=courier_new:h14
 "set guifont=monospace:h14
+:set guifont=Menlo:h18
 
 " in der Statuszeile sehen ob Einfuege-, Visueller- oder Kommonadomodus 
 set showmode
